@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r112/three.min.js"></script>
+  <script>
+    // 创建Three.js场景
+const scene = new THREE.Scene();
+
+// 创建透视相机
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+// 设置相机的位置
+camera.position.set(0, 0, 100);
+
+// 设置相机的方向
+camera.lookAt(scene.position);
+
+// 创建WebGL渲染器
+const renderer = new THREE.WebGLRenderer();
+
+// 设置渲染器的宽度和高度
+renderer.setSize(window.innerWidth, window.innerHeight);
+
+// 将渲染器添加到网页中
+document.body.appendChild(renderer.domElement);
+// 创建爱心形状的几何体
+const heartShape = new THREE.Shape();
+
+// 使用moveTo和bezierCurveTo方法绘制爱心形状
+heartShape.moveTo(25, 25);
+heartShape.bezierCurveTo(25, 25, 20, 0, 0, 0);
+heartShape.bezierCurveTo(30, 0, 30, 35, 30, 35);
+heartShape.bezierCurveTo(30, 55, 10, 77, 25, 95);
+heartShape.bezierCurveTo(60, 77, 80, 55, 80, 35);
+heartShape.bezierCurveTo(80, 35, 80, 0, 50, 0);
+heartShape.bezierCurveTo(35, 0, 25, 25, 25, 25);
+
+// 创建爱心几何体
+const heartGeometry = new THREE.ExtrudeGeometry(heartShape, {
+  depth: 10,
+  bevelEnabled: true,
+  bevelSegments: 2,
+  steps: 2,
+  bevelSize: 5,
+  bevelThickness: 5
+});
+
+// 创建光源
+const light = new THREE.DirectionalLight(0xffffff, 1);
+light.position.set(1, 1, 1);
+
+// 将光源添加到场景中
+scene.add(light);
+
+
+
+// 创建爱心材质
+const heartMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000 });
+
+// 创建爱心网格
+const heart = new THREE.Mesh(heartGeometry, heartMaterial);
+// 设置爱心的大小
+heart.scale.set(0.5, 0.5, 0.5);
+
+
+
+// 将爱心添加到场景中
+scene.add(heart);
+
+
+// 定义爱心的旋转角度
+let angle = 0;
+
+// 定义update函数
+function update() {
+  // 更新爱心的旋转角度
+  angle += 0.1;
+  heart.rotation.set(0, angle, 0);
+
+  // 重新渲染场景
+  renderer.render(scene, camera);
+
+  // 重复调用update函数
+  requestAnimationFrame(update);
+}
+
+// 调用update函数
+update();
+
+// 渲染场景
+// renderer.render(scene, camera);
+  </script>
+</html>
