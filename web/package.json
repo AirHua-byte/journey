@@ -15,7 +15,9 @@
     "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "eslint": "eslint ./** --ext .js, .vue --cache",
+    "fix": "eslint /**/*.*  --fix"
   },
   "dependencies": {
     "@nuxt/types": "^2.14.12",
@@ -25,14 +27,22 @@
     "express": "^4.16.4",
     "mavon-editor": "^2.7.7",
     "nuxt": "^2.0.0",
-    "sass": "^1.32.2",
     "parallax-js": "^3.1.0",
-    "qrcode": "^1.4.4"
+    "qrcode": "^1.4.4",
+    "sass": "^1.32.2"
   },
   "devDependencies": {
     "@nuxtjs/color-mode": "^2.0.3",
+    "eslint": "^8.30.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.6.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-vue": "^9.8.0",
     "file-loader": "^6.0.0",
     "nodemon": "^1.18.9",
+    "prettier": "^2.8.1",
     "sass-loader": "^8.0.0"
   }
 }

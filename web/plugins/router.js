@@ -1,20 +1,19 @@
-import Vue from 'vue'
+import Vue from 'vue';
 export default ({ app: { router }, store }) => {
-	console.log('first=================')
-    // 顶部loading
-	router.afterEach((to, from) => {
-		setTimeout(() => {
-			document.querySelector('.loader').style.display = 'none'
-		}, 1000)
-	})
-	router.beforeEach((to, from, next) => {
-		document.querySelector('.loader').style.display = 'block'
-		
-		
-		if (['index', 'article', 'envelope'].includes(from.name)) {
-			Vue.prototype.$loadMore('none')	// 重置
-		}
+  console.log('first=================');
+  // 顶部loading
+  router.afterEach((to, from) => {
+    setTimeout(() => {
+      document.querySelector('.loader').style.display = 'none';
+    }, 1000);
+  });
+  router.beforeEach((to, from, next) => {
+    document.querySelector('.loader').style.display = 'block';
 
-		next()
-	})
-}
+    if (['index', 'article', 'envelope'].includes(from.name)) {
+      Vue.prototype.$loadMore('none'); // 重置
+    }
+
+    next();
+  });
+};
