@@ -1,3 +1,5 @@
+const BASE_URL = 'http://server.huabyte.com/'
+
 module.exports = (app, plugin, model) => {
     const express = require('express');
     const router = express.Router();
@@ -56,7 +58,7 @@ module.exports = (app, plugin, model) => {
                  */
                 fs.unlinkSync(localFile)
                 const data = { 
-                    url: oss.domain ? `${oss.domain}/${result.name}` : result.url 
+                    url: oss.domain ? `${oss.domain}/${result.name}` : BASE_URL + result.url 
                 }
                 res.send(RequestResult(1, data))
             } catch (e) {
