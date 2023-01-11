@@ -67,7 +67,7 @@ module.exports = (app, plugin, model) => {
         } else {
             const filePath = (req.file.path).replace(/\\/g,"\/")
             const data = {
-                url: `/${filePath}` ,
+                url: BASE_URL + `/${filePath}`,
                 message: '上传成功'
             }
             res.send(RequestResult(1, data))
