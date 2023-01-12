@@ -154,6 +154,10 @@ export default {
     });
   },
   methods: {
+    skinStatus() {
+      const skinMode = this.$nuxt.$options.$colorMode;
+      return skinMode.preference === 'dark';
+    },
     getItemData(type) {
       const o = {
         skin: () => 'skin',
@@ -183,7 +187,9 @@ export default {
           this.$setScroll('top', 500);
         },
         skin: () => {
-          this.$skin();
+          // this.$skin();
+          const skinMode = this.$nuxt.$options.$colorMode;
+          skinMode.preference = skinMode.preference === 'dark' ? '' : 'dark';
         },
         like: () => {
           if (this.isLike) {

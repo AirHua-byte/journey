@@ -84,8 +84,10 @@
 <script>
 import Parallax from 'parallax-js';
 import Menus from '@/components/Menu';
+import loadMixin from '~/mixin/load.js';
 export default {
   name: 'index',
+  mixins: [loadMixin],
   components: {
     Menus,
   },

@@ -50,8 +50,9 @@
 
 <script>
 import scrollMixin from '~/mixin/scroll.js';
+import loadMixin from '~/mixin/load.js';
 export default {
-  mixins: [scrollMixin],
+  mixins: [scrollMixin, loadMixin],
   data() {
     return {
       music: '',

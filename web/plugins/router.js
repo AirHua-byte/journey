@@ -11,7 +11,7 @@ export default ({ app: { router }, store }) => {
     document.querySelector('.loader').style.display = 'block';
 
     if (['index', 'article', 'envelope'].includes(from.name)) {
-      Vue.prototype.$loadMore('none'); // 重置
+      Vue.prototype._loadMore('none'); // 重置
     }
 
     next();

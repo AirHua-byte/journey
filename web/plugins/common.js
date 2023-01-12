@@ -4,12 +4,12 @@ const common = {
   install(Vue, option) {
     // 换肤
     Vue.prototype.$skin = () => {
-      const skinMode = Vue.prototype.$nuxt.$options.$colorMode;
-      skinMode.preference = skinMode.preference === 'dark' ? '' : 'dark';
+      // const skinMode = Vue.prototype.$nuxt.$options.$colorMode;
+      // skinMode.preference = skinMode.preference === 'dark' ? '' : 'dark';
     };
     Vue.prototype.$skinStatus = () => {
-      const skinMode = Vue.prototype.$nuxt.$options.$colorMode;
-      return skinMode.preference === 'dark';
+      // const skinMode = Vue.prototype.$nuxt.$options.$colorMode;
+      // return skinMode.preference === 'dark';
     };
 
     function getWin(type) {
@@ -109,7 +109,7 @@ const common = {
 
     // Load More
     let [page, loadType, time] = [1, 'more', null];
-    Vue.prototype.$loadMore = (type, callback, from) => {
+    Vue.prototype._loadMore = (type, callback, from) => {
       if (type === 'none') {
         // reset
         page = 1;
@@ -156,7 +156,7 @@ const common = {
       time = null;
     }
 
-    Vue.prototype.$loadStatus = (data) => {
+    Vue.prototype._loadStatus = (data) => {
       if (data && data.page === data.totalPage) {
         setLoadType('nomore');
       }
