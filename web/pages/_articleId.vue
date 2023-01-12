@@ -58,7 +58,7 @@
             <span
               class="iconfont"
               :class="[
-                item.type == 'skin' && $skinStatus()
+                item.type == 'skin' && skinStatus()
                   ? 'icon-taiyang'
                   : item.icon,
                 item.type == 'like' && isLike ? 'icon-like' : '',
