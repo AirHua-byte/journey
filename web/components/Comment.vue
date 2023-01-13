@@ -130,9 +130,7 @@
                       </div>
                     </div>
                     <div class="comment-child-content">
-                      <span v-if="items.type === 3" class="reply-name">
-                        @{{ items.reply_name }}
-                      </span>
+                      <span v-if="items.type === 3" class="reply-name">@{{ items.reply_name.trim() }}</span>
                       <p>{{ items.content }}</p>
                     </div>
                   </div>
