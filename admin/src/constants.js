@@ -1,0 +1,1 @@
+export const ORGIN_URL = 'https://huabyte.com'

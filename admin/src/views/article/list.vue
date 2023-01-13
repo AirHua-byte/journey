@@ -42,6 +42,7 @@
 
 <script>
 import Pagination from '@/components/Pagination'
+import { ORGIN_URL } from '@/constants.js'
 export default {
     components: { 
         Pagination
@@ -84,7 +85,8 @@ export default {
         option(data, index) {
             const o = {
                 0: () => {
-                    window.open(`${window.location.origin}/${data.id}`)
+                    // window.open(`${window.location.origin}/${data.id}`)
+                    window.open(`${ORGIN_URL}/${data.id}`)
                 },
                 1: () => {
                     this.$router.push({ 

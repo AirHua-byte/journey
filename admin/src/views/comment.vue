@@ -55,6 +55,7 @@
 <script>
 import Comment from '@/components/comment'
 import Pagination from '@/components/Pagination'
+import { ORGIN_URL } from '@/constants.js'
 export default {
     components: { 
         Comment,
@@ -102,7 +103,8 @@ export default {
         option(data, index) {
             const o = {
                 0: () => {
-                    window.open(`${window.location.origin}/${data.topic_id}`)
+                    // window.open(`${window.location.origin}/${data.topic_id}`)
+                    window.open(`${ORGIN_URL}/${data.topic_id}`)
                 },
                 1: () => {
                     this.replyData = data
