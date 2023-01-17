@@ -30,7 +30,7 @@ app.use('/uploads', express.static(__dirname + '/uploads'))
 const verifyToken = ['login', 'user', 'forgotPassword'].map(i => '/admin/api/' + i)
 app.use(
   expressJwt({
-    secret: 'Libai'
+    secret: 'AirHua'
   }).unless({
     path: [...verifyToken]
   })
