@@ -32,13 +32,17 @@ export default {
           url: 'envelope',
         },
         {
-          title: 'Subscribe',
-          url: 'subscribe',
+          title: 'Blog',
+          url: 'https://blog.huabyte.com/',
         },
-        {
-          title: 'Message',
-          url: 'message',
-        },
+        // {
+        //   title: 'Subscribe',
+        //   url: 'subscribe',
+        // },
+        // {
+        //   title: 'Message',
+        //   url: 'message',
+        // },
         {
           title: 'About',
           url: 'about',
@@ -63,6 +67,11 @@ export default {
   },
   methods: {
     toPage(url) {
+      if (url.match(/http/g)) {
+        // 博客处理
+        window.open(url);
+        return;
+      }
       this.$router.push(`/${url}`);
     },
   },

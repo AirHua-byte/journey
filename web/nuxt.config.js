@@ -28,7 +28,7 @@ module.exports = {
     port: 8000,
   },
   env: {
-    baseUrl: process.env.BASE_URL || 'http://server.huabyte.com/web/api',
+    baseUrl: process.env.BASE_URL || 'https://server.huabyte.com/web/api',
   },
   modules: ['@nuxtjs/axios', '@nuxtjs/color-mode'],
   axios: {
@@ -38,14 +38,14 @@ module.exports = {
   },
   proxy: {
     '/api': {
-      target: process.env.BASE_URL || 'http://server.huabyte.com/web/api',
+      target: process.env.BASE_URL || 'https://server.huabyte.com/web/api',
       changeOrigin: true,
       pathRewrite: {
         '^/api': '/',
       },
     },
     '/uploads': {
-      target: 'http://server.huabyte.com/',
+      target: 'https://server.huabyte.com/',
       changeOrigin: true,
     },
   },
