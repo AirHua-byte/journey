@@ -8,6 +8,22 @@
       title="嘿，你今天笑了么(≖ᴗ≖)✧"
     ></Headers>
     <div class="content" v-html="data.contentHtml"></div>
+    <div class="contact">
+      <div class="icon wechat">
+        <div>
+          <img src="../../admin/src/assets/cover.png" alt="" />
+        </div>
+        <span><i class="iconfont icon-wechat"></i></span>
+      </div>
+      <div class="icon youxiang">
+        <div>huabyte@qq.com</div>
+        <span><i class="iconfont icon-youxiang"></i></span>
+      </div>
+      <a href="https://github.com/AirHua-byte" class="icon github">
+        <div>我的github，可以的话来个star呀~</div>
+        <span><i class="iconfont icon-github"></i></span>
+      </a>
+    </div>
   </div>
 </template>
 
@@ -185,5 +201,114 @@ export default {
       }
     }
   }
+}
+</style>
+
+<style lang="scss" scoped>
+.contact {
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  padding: 0px 20px 50px;
+  display: flex;
+}
+.icon {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background-color: #cacaca;
+  border-radius: 50%;
+  /* box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  cursor: pointer;
+  margin-right: 18px;
+  text-decoration: none;
+}
+
+.icon i {
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.icon div {
+  position: absolute;
+  top: 0px;
+  width: 192px;
+  text-align: center;
+  padding: 12px 0px;
+  border-radius: 30px;
+  color: #fff;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+  /* 默认隐藏 */
+  opacity: 0;
+  /* 知识点：贝塞尔曲线，让动画变得顺畅有节奏 */
+  transition: 0.5s cubic-bezier(0.18, 1.09, 0.77, 1.33);
+  /* 知识点：不响应鼠标事件 */
+  pointer-events: none;
+  img {
+    width: 90%;
+    border-radius: 8px;
+    // height: 150px;
+  }
+}
+
+/* 制作消息框的下方小三角 */
+
+.icon div::before {
+  /* 神奇的操作 */
+  position: absolute;
+  content: '';
+  width: 15px;
+  height: 15px;
+  bottom: -7px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.icon.wechat div,
+.icon.wechat div::before {
+  background-color: #74afe6;
+}
+
+.icon.youxiang div,
+.icon.youxiang div::before {
+  background-color: #74afe6;
+}
+
+.icon.github div,
+.icon.github div::before {
+  background-color: #74afe6;
+}
+
+/* 按钮鼠标移入时变色 */
+.icon.wechat:hover {
+  background-color: lightgreen;
+  color: #fff;
+}
+
+.icon.youxiang:hover {
+  background-color: lightcoral;
+  color: #fff;
+}
+
+.icon.github:hover {
+  background-color: #080808;
+  color: #fff;
+}
+
+.icon:hover div {
+  opacity: 1;
+}
+.wechat:hover div {
+  top: -166px;
+}
+.youxiang:hover div {
+  top: -68px;
+}
+.github:hover div {
+  top: -88px;
 }
 </style>
