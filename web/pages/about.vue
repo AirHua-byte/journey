@@ -11,7 +11,10 @@
     <div class="contact">
       <div class="icon wechat">
         <div>
-          <img src="../../admin/src/assets/cover.png" alt="" />
+          <img
+            src="https://assets.huabyte.com/blog/image/mood/WX20230122-222448%402x.png"
+            alt=""
+          />
         </div>
         <span><i class="iconfont icon-wechat"></i></span>
       </div>
@@ -303,7 +306,7 @@ export default {
   opacity: 1;
 }
 .wechat:hover div {
-  top: -166px;
+  top: -220px;
 }
 .youxiang:hover div {
   top: -68px;
