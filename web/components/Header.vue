@@ -8,11 +8,11 @@
         <div class="logo-img" @click="toPage('/')">
           <img src="/image/logo/logo3.png" />
         </div>
-        <span
+        <!-- <span
           class="iconfont"
           :class="[palyStatus]"
           @click="changeMusic"
-        ></span>
+        ></span> -->
       </div>
 
       <div class="title" :class="{ active: scroll_current >= 100 }">
@@ -46,7 +46,7 @@
     </div>
 
     <!-- mobile music icon -->
-    <div class="music-btn" @click="changeMusic" :class="[mobileMusic]">
+    <!-- <div class="music-btn" @click="changeMusic" :class="[mobileMusic]">
       <svg
         class="progress-circle"
         viewBox="0 0 100 100"
@@ -71,7 +71,7 @@
         />
       </svg>
       <span class="iconfont" :class="[palyStatus]"></span>
-    </div>
+    </div> -->
 
     <!-- music -->
     <audio ref="music" loop preload="auto">
@@ -212,8 +212,8 @@ export default {
         try {
           await music.play();
         } catch (err) {
-          alert('自动播放音乐出现错误，请点击左上角进行播放！');
-          this.changeMusic();
+          // alert('自动播放音乐出现错误，请点击左上角进行播放！');
+          // this.changeMusic();
           return;
         }
         const fn = () => {
@@ -244,7 +244,7 @@ export default {
       }
       // Played for the first time
       if (!this.played && className !== 'iconfont icon-play') {
-        this.changeMusic();
+        // this.changeMusic();
       }
     },
     // like +1

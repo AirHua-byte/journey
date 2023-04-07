@@ -8,7 +8,9 @@
       </template>
     </ul>
     <div class="world">
-      <span>Everywhere in the world has a similar life.</span>
+      <span
+        >BingoMeta连接真实世界和数字世界的桥梁，要帮助人类完成数字化映射，是通往未来元宇宙的核心支撑。</span
+      >
     </div>
   </div>
 </template>
@@ -20,21 +22,25 @@ export default {
     return {
       list: [
         {
-          title: 'Article',
+          title: '团队动态',
           url: 'article',
         },
         {
-          title: 'Rainy',
-          url: 'rain',
+          title: '研究成果',
+          url: 'media',
         },
         {
-          title: 'Envelope',
-          url: 'envelope',
+          title: '团队成员',
+          url: 'team',
         },
-        {
-          title: 'Blog',
-          url: 'https://blog.huabyte.com/',
-        },
+        // {
+        //   title: '研究探索',
+        //   url: 'envelope',
+        // },
+        // {
+        //   title: 'Blog',
+        //   url: 'https://blog.huabyte.com/',
+        // },
         // {
         //   title: 'Subscribe',
         //   url: 'subscribe',
@@ -44,7 +50,7 @@ export default {
         //   url: 'message',
         // },
         {
-          title: 'About',
+          title: '关于我们',
           url: 'about',
         },
       ],

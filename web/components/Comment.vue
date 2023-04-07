@@ -110,7 +110,7 @@
                   >
                     <div class="head">
                       <div class="img">
-                        <img :src="'/image/comment/' + items.image + '.jpg'" />
+                        <img :src="'/image/comment/' + items.image + '.png'" />
                       </div>
                       <div class="name">
                         <a :class="{ 'admin-mark': items.admin }"
@@ -328,7 +328,7 @@ export default {
       // image
       const info = JSON.parse(localStorage.getItem('comment'));
       if (!this.form.image || (info && info.name !== this.form.name)) {
-        this.form.image = Math.floor(Math.random() * 10 + 1);
+        this.form.image = Math.floor(Math.random() * 7 + 1);
       }
 
       /**

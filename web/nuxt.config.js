@@ -23,12 +23,23 @@ module.exports = {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: 'image/logo/favicon.ico' },
     ],
+    script: [
+      {
+        src: 'https://cdn.jsdelivr.net/npm/three@0.121.1/build/three.min.js',
+      },
+      {
+        src: 'https://cdn.jsdelivr.net/npm/three@0.121.1/examples/js/controls/OrbitControls.js',
+      },
+      {
+        src: 'https://cdnjs.cloudflare.com/ajax/libs/simplex-noise/2.4.0/simplex-noise.min.js',
+      },
+    ],
   },
   server: {
     port: 8000,
   },
   env: {
-    baseUrl: process.env.BASE_URL || 'https://server.huabyte.com/web/api',
+    baseUrl: process.env.BASE_URL || 'http://server:3000/web/api',
   },
   modules: ['@nuxtjs/axios', '@nuxtjs/color-mode'],
   axios: {
@@ -38,14 +49,14 @@ module.exports = {
   },
   proxy: {
     '/api': {
-      target: process.env.BASE_URL || 'https://server.huabyte.com/web/api',
+      target: process.env.BASE_URL || 'http://server:3000/web/api',
       changeOrigin: true,
       pathRewrite: {
         '^/api': '/',
       },
     },
     '/uploads': {
-      target: 'https://server.huabyte.com/',
+      target: 'http://server:3000/web/api',
       changeOrigin: true,
     },
   },

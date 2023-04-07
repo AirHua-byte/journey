@@ -38,10 +38,10 @@ app.use(
 
 // 接口验证
 app.use((err, req, res, next) => {
-  if (req.originalUrl.slice(1, 4) == 'web') {
-    // 跳过前台
-    return next()
-  }
+  // if (req.originalUrl.slice(1, 4) == 'web') {
+  // 跳过前台
+  return next()
+  // }
   if (err.name === 'UnauthorizedError') {
     // Token过期
     res.status(err.status || 401)
