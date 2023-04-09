@@ -304,6 +304,7 @@ export default {
   background: var(--color-bg-primary);
   z-index: 99999;
   transition: all 0.3s;
+  border: none;
   &.show {
     position: fixed;
     animation: headShow 0.6s both;
